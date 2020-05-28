@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+    <form th:action="@{/upload-product-csv-file}" enctype="multipart/form-data" method="post">
+
+        <div class="form-group mt-3">
+            <label for="file">Select a CSV file to import the product data</label>
+            <input type="file"  id="file" class="form-control-file" name="file" accept=".csv"/>
+        </div>
+        <div>
+            <input type="submit" value="Upload"/>
+        </div>
+    </form>
+    <div th:text="${message}"></div>
+</body>
+</html>
