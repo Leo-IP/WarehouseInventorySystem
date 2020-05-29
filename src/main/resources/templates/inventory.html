@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Product</title>
+    <title>Inventory</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
 </head>
 <body>
-    <form th:action="@{/upload-product-csv-file}" enctype="multipart/form-data" method="post">
+<body>
+    <form th:action="@{/upload-inventory-csv-file}" enctype="multipart/form-data" method="post">
 
         <div class="form-group mt-3">
-            <label for="file">Select a CSV file to import the product data</label>
+            <label for="file">Select a CSV file to import the inventory data</label>
             <input type="file"  id="file" class="form-control-file" name="file" accept=".csv"/>
         </div>
         <div>
@@ -21,5 +21,6 @@
     <div>
         <a th:href="@{/}">Back</a>
     </div>
+</body>
 </body>
 </html>
