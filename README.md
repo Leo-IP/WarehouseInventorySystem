@@ -31,6 +31,7 @@ Step 5:
 Using localhost:8080 to access the application
 
 Step 6:
+Insert the product data using sample_product_csv_data.csv or you can make up your own data set following the CSV format I provided
 
 Stack
 ---
