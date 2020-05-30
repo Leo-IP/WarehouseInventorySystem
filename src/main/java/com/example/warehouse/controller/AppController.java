@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.swing.text.html.parser.Entity;
 import java.io.*;
+import java.math.BigDecimal;
 import java.nio.Buffer;
 import java.util.List;
 
@@ -64,31 +65,16 @@ public class AppController {
         if(file.isEmpty()){
             redirectAttributes.addFlashAttribute("message", "Please select a CSV file to upload");
         } else {
-            try{
+            try {
                 List<Product> productList = parseCSVWithHeader(Product.class, file);
+//                for(Product product : productList){
+//                    if(product.getWeight().intValue() < 0) throw new Exception();
+//                }
                 productService.saveAll(productList);
                 redirectAttributes.addFlashAttribute("message", "The file has been successfully uploaded.");
             }catch (Exception e){
                 redirectAttributes.addFlashAttribute("message", "An error occurred while processing the CSV file.");
             }
-//            try(Reader reader = new BufferedReader(new InputStreamReader(file.getInputStream()))){
-//
-//                CsvToBean<Product> csvToBean = new CsvToBeanBuilder(reader)
-//                        .withType(Product.class)
-//                        .withIgnoreLeadingWhiteSpace(true)
-//                        .build();
-//
-//                List<Product> products = csvToBean.parse();
-//                productService.saveAll(products);
-////                for(Product product : products){
-////                    productService.save(product);
-////                }
-//
-//                redirectAttributes.addFlashAttribute("message", "The file has been successfully uploaded.");
-//
-//            }catch(Exception e){
-//                redirectAttributes.addFlashAttribute("message", "An error occurred while processing the CSV file.");
-//            }
         }
         return "redirect:/product";
     }
@@ -98,8 +84,11 @@ public class AppController {
         if(file.isEmpty()){
             redirectAttributes.addFlashAttribute("message", "Please select a CSV file to upload");
         }else{
-            try{
+            try {
                 List<Inventory> inventoryList = parseCSVWithHeader(Inventory.class, file);
+//                for(Inventory inventory : inventoryList){
+//                    if(inventory.getQty() < 0) throw new Exception();
+//                }
                 inventoryService.saveAll(inventoryList);
                 redirectAttributes.addFlashAttribute("message", "The file has been successfully uploaded.");
             }catch (Exception e){
