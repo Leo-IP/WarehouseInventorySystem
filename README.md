@@ -67,7 +67,7 @@ Qty can only be Integer.
 
 Daily
 ---
-28/05/2020\
+28/05/2020
 
 Completed
 1. Able to store product data via csv file consumption
@@ -75,13 +75,13 @@ Completed
 What I have learnt:
 1. 
 
-29/05/2020\
+29/05/2020
 
 Completed
 1. Able to store quantities of such products in different locations via csv file consumption.\
 2. UI to show inventory level of given product code
 
-30/05/2020\
+30/05/2020
 
 Completed 
 1. Able to transfer inventory from one location to another given amount of quantity and product code via UI
