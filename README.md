@@ -5,6 +5,7 @@ Stack
 Database: MySQL\
 Framework: Spring(Spring boot)\
 ORM: Hibernate\
+Template engine: Thymeleaf\
 Language: Java, HTML5, JavaScript, CSS
 
 CSV Data format
