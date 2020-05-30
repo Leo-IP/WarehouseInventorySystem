@@ -33,10 +33,10 @@ Using localhost:8080 to access the application
 How to test the application
 ---
 Step 1:
-Insert the product data using sample_product_csv_data.csv in the csv folder or you can make up your own data set following the CSV format I provided. You must follow the csv format otherwise the application will not accept the csv data.
+Insert the product data using sample_product_csv_data.csv in the csv folder or you can make up your own data set following the CSV format I provided. 
 
 Step 2:
-After inserted the product using sample_inventory_csv_data.csv in the csv folder.
+After inserted the product using sample_inventory_csv_data.csv in the csv folder or you can make up your own data set following the CSV format I provided. 
 
 Stack
 ---
@@ -53,10 +53,14 @@ Product_Name,Code,Weight\
 face mask,FM-HKTV01,100\
 face mask2,FM-HKTV02,102.2
 
+Weight can only be digits.
+
 **Inventory csv file**\
 Product_Code,Warehouse_Code,Qty\
 FM-HKTV01,TKO,5\
 FM-HKTV01,CAB,4
+
+Qty can only be Integer.
 
 Daily
 ---
