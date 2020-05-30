@@ -2,11 +2,11 @@
 
 CSV Data format
 ---
-**Product csv file**
+**Product csv file**\
 Product_Name,Code,Weight
 face mask,FM-HKTV01,100
 
-**Inventory csv file**
+**Inventory csv file**\
 Product_Code,Warehouse_Code,Qty
 FM-HKTV01,TKO,5
 
