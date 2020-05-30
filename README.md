@@ -38,6 +38,9 @@ Insert the product data using sample_product_csv_data.csv in the csv folder or y
 Step 2:
 After inserted the product using sample_inventory_csv_data.csv in the csv folder or you can make up your own data set following the CSV format I provided. 
 
+Step 3:
+Using the product code to search and show the inventory levels
+
 Stack
 ---
 Database: MySQL\
@@ -69,6 +72,14 @@ Completed: Able to store product data via csv file consumption
 
 What I have learnt:
 1. 
+
+29/05/2020\
+Completed: Able to store quantities of such products in different locations via csv file consumption.
+           UI to show inventory level of given product code
+
+30/05/2020\
+Completed: Able to transfer inventory from one location to another given amount of quantity and product code via UI
+
 
 
 
