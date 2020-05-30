@@ -10,6 +10,8 @@ face mask,FM-HKTV01,100
 Product_Code,Warehouse_Code,Qty\
 FM-HKTV01,TKO,5
 
+Daily
+---
 28/05/2020 
 Finished: able to store product data via csv file consumption
 
