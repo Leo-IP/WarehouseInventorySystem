@@ -30,8 +30,13 @@ Insert the warehouse data in the sql folder warehouse_data.sql (You can add more
 Step 5:
 Using localhost:8080 to access the application
 
-Step 6:
+How to test the application
+---
+Step 1:
 Insert the product data using sample_product_csv_data.csv in the csv folder or you can make up your own data set following the CSV format I provided. You must follow the csv format otherwise the application will not accept the csv data.
+
+Step 2:
+After inserted the product using sample_inventory_csv_data.csv in the csv folder.
 
 Stack
 ---
