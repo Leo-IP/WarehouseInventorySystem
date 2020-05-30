@@ -29,7 +29,7 @@ FM-HKTV01,CAB,4
 Daily
 ---
 28/05/2020\
-Finished: able to store product data via csv file consumption
+Completed: Able to store product data via csv file consumption
 
 What I have learnt:
 1. 
