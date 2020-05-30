@@ -74,7 +74,7 @@ What I have learnt:
 1. 
 
 29/05/2020\
-Completed: Able to store quantities of such products in different locations via csv file consumption.
+Completed: Able to store quantities of such products in different locations via csv file consumption.\
            UI to show inventory level of given product code
 
 30/05/2020\
