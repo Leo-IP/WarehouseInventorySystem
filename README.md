@@ -1,9 +1,9 @@
 # Warehouse Inventory System
 
-●	able to store product data via csv file consumption. 
-●	able to store quantities of such products in different locations via csv file consumption. 
-●	UI to show inventory level of given product code
-●	able to transfer inventory from one location to another given amount of quantity and product code via UI
+* Able to store product data via csv file consumption. 
+*	Able to store quantities of such products in different locations via csv file consumption. 
+*	UI to show inventory level of given product code
+*	Able to transfer inventory from one location to another given amount of quantity and product code via UI
 
 
 Stack
