@@ -22,10 +22,15 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect (Change it if y
 spring.jpa.show-sql=true
 
 Step 3:
-Run the WarehouseInventorySystemApplication, the application 
+Run the WarehouseInventorySystemApplication, the application will automatically generate the database tables for you.
 
 Step 4:
-Insert the warehouse data in the warehouse_data.sql
+Insert the warehouse data in the sql folder warehouse_data.sql (You can add more data if you want)
+
+Step 5:
+Using localhost:8080 to access the application
+
+Step 6:
 
 Stack
 ---
