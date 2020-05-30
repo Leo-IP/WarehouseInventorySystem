@@ -73,7 +73,7 @@ Completed
 1. Able to store product data via csv file consumption
 
 What I have learnt:
-1. 
+1. How to use spring initizer
 
 29/05/2020
 
