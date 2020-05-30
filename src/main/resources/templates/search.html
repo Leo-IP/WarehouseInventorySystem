@@ -46,10 +46,15 @@
                     </thead>
                     <tbody>
                         <tr th:each="inventory : ${inventoryList}">
+                            <form th:action="@{/transfer}">
+                                <input type="hidden" name="productCode" th:value="${inventory.productCode}">
+                                <input type="hidden" name="fromWarehouseCode" th:value="${inventory.warehouseCode}">
+                                <input type="hidden" name="qty" th:value="${inventory.qty}">
                                 <td th:text="${inventory.productCode}"></td>
                                 <td th:text="${inventory.warehouseCode}"></td>
                                 <td th:text="${inventory.qty}"></td>
-                                <td><a>Transfer</a></td>
+                                <td><input type="submit" value="Transfer" th:if="${inventory.qty}"></td>
+                            </form>
                         </tr>
                     </tbody>
                 </table>

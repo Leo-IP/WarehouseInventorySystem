@@ -1,9 +1,12 @@
 package com.example.warehouse.controller;
 
+import com.example.warehouse.dto.TransferFormDto;
 import com.example.warehouse.model.Inventory;
 import com.example.warehouse.model.Product;
+import com.example.warehouse.model.Warehouse;
 import com.example.warehouse.service.InventoryService;
 import com.example.warehouse.service.ProductService;
+import com.example.warehouse.service.WarehouseService;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
@@ -27,6 +30,9 @@ public class AppController {
     private ProductService productService;
     @Autowired
     private InventoryService inventoryService;
+    @Autowired
+    private WarehouseService warehouseService;
+
 
     @GetMapping("/")
     public String Index(){
@@ -43,6 +49,15 @@ public class AppController {
 
     @GetMapping("/search")
     public String searchView(@ModelAttribute("message") String message) {return "search";}
+
+    @GetMapping("/transfer")
+    public String transferView(@ModelAttribute("transferFormDto") TransferFormDto transferFormDto, @RequestParam("qty") int qty, Model model){
+
+        List<Warehouse> warehouseList = warehouseService.findByWarehouseCodeNot(transferFormDto.getFromWarehouseCode());
+        model.addAttribute("warehouseList", warehouseList);
+        model.addAttribute("qty", qty);
+        return "transfer";
+    }
 
     @PostMapping("/upload-product-csv-file")
     public String uploadProductCSVFile(@RequestParam("file") MultipartFile file, Model model, RedirectAttributes redirectAttributes){
@@ -107,6 +122,13 @@ public class AppController {
 
         return "search";
     }
+
+    @PostMapping("/transfer")
+    public String transferProduct(@ModelAttribute("transferFormDto") TransferFormDto transferFormDto) {
+        inventoryService.saveTransferData(transferFormDto);
+        return "redirect:/search/product?product_code=" + transferFormDto.getProductCode();
+    }
+
 
     public static <T> List<T> parseCSVWithHeader(Class<T> tClass, MultipartFile file) throws IOException{
         try(Reader reader = new BufferedReader(new InputStreamReader(file.getInputStream()))){

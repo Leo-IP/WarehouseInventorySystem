@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer</title>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+</head>
+<body>
+    <form th:action="@{/transfer}" th:object="${transferFormDto}" method="post" onsubmit="return validateTransferForm()">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Product Code:</td>
+                <td><input type="text" th:field="*{productCode}" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td>From Warehouse:</td>
+                <td><input type="text" th:field="*{fromWarehouseCode}" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td>Qty:</td>
+                <td><input type="number" id="productTransferQty" th:field="*{qty}" ></td>
+                <td><input type="hidden" id="maxProductTransferQty" th:value="${qty}"></td>
+            </tr>
+
+            <tr>
+                <td>Transfer to:</td>
+                <td>
+                    <select id="warehouseCodeList" th:field="*{toWarehouseCode}">
+                        <option th:each="warehouse : ${warehouseList}"
+                                th:value="${warehouse.warehouseCode}"
+                                th:text="${warehouse.warehouseCode}">
+                        </option>
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Transfer"/></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
