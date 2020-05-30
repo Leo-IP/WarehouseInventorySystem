@@ -10,7 +10,7 @@ How to start the application
 This project is using Intellij as the IDE.
 
 Step 1:
-Import the project in Intellij
+Import the project using Intellij
 
 Step 2:
 Change the application.properties to match your environment
