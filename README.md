@@ -12,7 +12,7 @@ FM-HKTV01,TKO,5
 
 Daily
 ---
-28/05/2020 
+28/05/2020\
 Finished: able to store product data via csv file consumption
 
 What I have learnt:
