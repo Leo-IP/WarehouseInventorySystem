@@ -67,13 +67,13 @@ public class AppController {
         } else {
             try {
                 List<Product> productList = parseCSVWithHeader(Product.class, file);
-//                for(Product product : productList){
-//                    if(product.getWeight().intValue() < 0) throw new Exception();
-//                }
+                for (Product product : productList) {
+                    if (product.getWeight().intValue() < 0) throw new Exception();
+                }
                 productService.saveAll(productList);
                 redirectAttributes.addFlashAttribute("message", "The file has been successfully uploaded.");
             }catch (Exception e){
-                redirectAttributes.addFlashAttribute("message", "An error occurred while processing the CSV file.");
+                redirectAttributes.addFlashAttribute("message", "An error occurred while processing the CSV file. Please check the data in the csv file!");
             }
         }
         return "redirect:/product";
@@ -86,13 +86,13 @@ public class AppController {
         }else{
             try {
                 List<Inventory> inventoryList = parseCSVWithHeader(Inventory.class, file);
-//                for(Inventory inventory : inventoryList){
-//                    if(inventory.getQty() < 0) throw new Exception();
-//                }
+                for (Inventory inventory : inventoryList) {
+                    if (inventory.getQty() < 0) throw new Exception();
+                }
                 inventoryService.saveAll(inventoryList);
                 redirectAttributes.addFlashAttribute("message", "The file has been successfully uploaded.");
             }catch (Exception e){
-                redirectAttributes.addFlashAttribute("message", "An error occurred while processing the CSV file.");
+                redirectAttributes.addFlashAttribute("message", "An error occurred while processing the CSV file. Please check the data in the csv file!");
             }
         }
         return "redirect:/inventory";
@@ -117,7 +117,6 @@ public class AppController {
         inventoryService.saveTransferData(transferFormDto);
         return "redirect:/search/product?product_code=" + transferFormDto.getProductCode();
     }
-
 
     public static <T> List<T> parseCSVWithHeader(Class<T> tClass, MultipartFile file) throws IOException{
         try(Reader reader = new BufferedReader(new InputStreamReader(file.getInputStream()))){

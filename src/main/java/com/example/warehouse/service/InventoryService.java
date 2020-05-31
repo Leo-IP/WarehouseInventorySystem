@@ -2,13 +2,10 @@ package com.example.warehouse.service;
 
 import com.example.warehouse.dto.TransferFormDto;
 import com.example.warehouse.model.Inventory;
-import com.example.warehouse.model.Product;
-import com.example.warehouse.model.Warehouse;
 import com.example.warehouse.repository.InventoryRepo;
 import com.example.warehouse.repository.ProductRepo;
 import com.example.warehouse.repository.WarehouseRepo;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,21 +22,6 @@ public class InventoryService {
     InventoryRepo inventoryRepo;
     @Autowired
     ModelMapper modelMapper;
-
-    public void saveInventoryCSVFileData(Inventory inventory){
-        Inventory existRecord = inventoryRepo.findByProductCodeAndAndWarehouseCode(inventory.getProductCode(), inventory.getWarehouseCode());
-        if(existRecord != null){
-            existRecord.setQty(inventory.getQty() + existRecord.getQty());
-            inventoryRepo.save(existRecord);
-        }else{
-            inventoryRepo.save(inventory);
-        }
-
-    }
-
-    public void save(Inventory inventory){
-        inventoryRepo.save(inventory);
-    }
 
     public void saveTransferData(TransferFormDto transferFormDto){
         Inventory fromInventory = inventoryRepo.findByProductCodeAndAndWarehouseCode(transferFormDto.getProductCode(), transferFormDto.getFromWarehouseCode());
@@ -64,7 +46,6 @@ public class InventoryService {
         }
     }
 
-
     public void saveAll(List<Inventory> inventoryList){
         for(Inventory inventory : inventoryList){
             Inventory existRecord = inventoryRepo.findByProductCodeAndAndWarehouseCode(inventory.getProductCode(), inventory.getWarehouseCode());
@@ -78,28 +59,42 @@ public class InventoryService {
 //        inventoryRepo.saveAll(inventoryList);
     }
 
-    public List<Inventory> findByProductCode(String productCode){
+    public List<Inventory> findByProductCode(String productCode) {
         return inventoryRepo.findByProductCode(productCode);
     }
 
-    public Inventory findByProductCodeAndWarehouseCode(String productCode, String warehouseCode){
-//        return inventoryRepo.findByProductCodeAndAndWarehouseCode(productCode, warehouseCode);
-        return inventoryRepo.findAllByProductCodeAndAndWarehouseCode(productCode, warehouseCode).get(0);
-    }
-
-    public List<Inventory> findByProductCodeAndWarehouseCodeNot(String productCode, String warehouseCode){
-        return inventoryRepo.findByProductCodeAndWarehouseCodeNot(productCode, warehouseCode);
-    }
-
-    public boolean existsByProductCodeAndWarehouseCode(String productCode, String warehouseCode){
-        return inventoryRepo.existsByProductCodeAndWarehouseCode(productCode, warehouseCode);
-    }
-
-    public void createNewInventoryRecord(TransferFormDto transferFormDto){
-
-
-        Inventory inventoryRecord = modelMapper.map(transferFormDto, Inventory.class);
-        System.out.println(inventoryRecord);
-
-    }
+//    public Inventory findByProductCodeAndWarehouseCode(String productCode, String warehouseCode){
+//       return inventoryRepo.findByProductCodeAndAndWarehouseCode(productCode, warehouseCode);
+//        return inventoryRepo.findAllByProductCodeAndAndWarehouseCode(productCode, warehouseCode).get(0);
+//    }
+//
+//    public List<Inventory> findByProductCodeAndWarehouseCodeNot(String productCode, String warehouseCode){
+//        return inventoryRepo.findByProductCodeAndWarehouseCodeNot(productCode, warehouseCode);
+//    }
+//
+//    public boolean existsByProductCodeAndWarehouseCode(String productCode, String warehouseCode){
+//        return inventoryRepo.existsByProductCodeAndWarehouseCode(productCode, warehouseCode);
+//    }
+//
+//    public void createNewInventoryRecord(TransferFormDto transferFormDto){
+//
+//
+//        Inventory inventoryRecord = modelMapper.map(transferFormDto, Inventory.class);
+//        System.out.println(inventoryRecord);
+//
+//    }
+//    public void saveInventoryCSVFileData(Inventory inventory){
+//        Inventory existRecord = inventoryRepo.findByProductCodeAndAndWarehouseCode(inventory.getProductCode(), inventory.getWarehouseCode());
+//        if(existRecord != null){
+//            existRecord.setQty(inventory.getQty() + existRecord.getQty());
+//            inventoryRepo.save(existRecord);
+//        }else{
+//            inventoryRepo.save(inventory);
+//        }
+//
+//     }
+//
+//    public void save(Inventory inventory){
+//        inventoryRepo.save(inventory);
+//    }
 }
