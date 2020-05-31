@@ -5,12 +5,12 @@
 * Able to store product data via csv file consumption. 
     * The system will only accept .csv file.
     * The system will not accept duplicate product data. Please make sure your data does not exist in the product table.
-*	Able to store quantities of such products in different locations via csv file consumption.
+* Able to store quantities of such products in different locations via csv file consumption.
     * The system will only accept .csv file
     * If the data already existed in the database. The system will find the inventory record and add the product qty to that record. Otherwise, it will create a new inventory record.
-*	UI to show inventory level of given product code
+* UI to show inventory level of given product code
     * Your product code must be exact.
-*	Able to transfer inventory from one location to another given amount of quantity and product code via UI
+* Able to transfer inventory from one location to another given amount of quantity and product code via UI
     * Make sure your qty is not larger that the current inventory levels.
 
 Stack
@@ -147,7 +147,7 @@ Daily
 ---
 28/05/2020
 
-Completed
+What I have developed:
 1. Able to store product data via csv file consumption
 
 What I have learnt:
@@ -162,7 +162,7 @@ What I have learnt:
 
 29/05/2020
 
-Completed
+What I have developed:
 1. Able to store quantities of such products in different locations via csv file consumption.\
 2. UI to show inventory level of given product code
 
@@ -176,7 +176,7 @@ What I have learnt:
 
 30/05/2020
 
-Completed 
+What I have developed:
 1. Able to transfer inventory from one location to another given amount of quantity and product code via UI
 
 What I have learnt:
