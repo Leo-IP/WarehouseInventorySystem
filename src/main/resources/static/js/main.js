@@ -16,16 +16,21 @@ function validateForm(){
 }
 
 function validateTransferForm(){
-    const x = parseInt(document.getElementById("productTransferQty").value);
+    const qtyInput = document.getElementById("productTransferQty").value
+    if (qtyInput.trim() == "") {
+        alert("Qty must be filled out");
+        return false;
+    }
+    const x = parseInt(qtyInput);
     const max = parseInt(document.getElementById("maxProductTransferQty").value);
     console.log("max value:" + max);
-    const regex=/^[0-9]*$/
+    const regex = /^[0-9]*$/
     // if(x.match(regex)){
     //     alert("Your input is not valid")
     //     return false;
     // }
 
-    if(x < 1) {
+    if (x < 1) {
         alert("Make sure the qty is larger than 0")
         return false;
     }
