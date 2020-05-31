@@ -5,6 +5,10 @@
 *	UI to show inventory level of given product code
 *	Able to transfer inventory from one location to another given amount of quantity and product code via UI
 
+Git clone link
+---
+https://github.com/Leo-IP/WarehouseInventorySystem.git
+
 How to start the application
 ---
 This project is using Intellij as the IDE.
