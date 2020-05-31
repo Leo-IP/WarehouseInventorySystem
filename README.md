@@ -3,7 +3,7 @@
 **Description**
 
 * Able to store product data via csv file consumption. 
-    * The system will only accept .csv file
+    * The system will only accept .csv file.
     * The system will not accept duplicate product data. Please make sure your data does not exist in the product table.
 *	Able to store quantities of such products in different locations via csv file consumption.
     * The system will only accept .csv file
