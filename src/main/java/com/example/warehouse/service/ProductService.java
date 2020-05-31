@@ -15,11 +15,6 @@ public class ProductService {
     private ProductRepo productRepo;
 
     @Transactional
-    public void save(Product product){
-        productRepo.save(product);
-    }
-
-    @Transactional
     public void saveAll(List<Product> productList){
         productRepo.saveAll(productList);
     }

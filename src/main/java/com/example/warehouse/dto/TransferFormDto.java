@@ -14,5 +14,4 @@ public class TransferFormDto {
     private String fromWarehouseCode;
     private String toWarehouseCode;
     private int qty;
-    private int checkingQty;
 }

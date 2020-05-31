@@ -11,5 +11,5 @@ public interface WarehouseRepo extends JpaRepository<Warehouse, Long> {
 
     List<Warehouse> findByWarehouseCodeNot (String warehouseCode);
 
-    Warehouse findByWarehouseCode(String warehouseCode);
+//    Warehouse findByWarehouseCode(String warehouseCode);
 }

@@ -15,13 +15,6 @@ public class AppConfig {
     @Bean
     public ModelMapper modelMapper(){
         ModelMapper modelMapper = new ModelMapper();
-
-//        TypeMap<TransferFormDto, Inventory> typeMap = modelMapper.createTypeMap(TransferFormDto.class, Inventory.class);
-//
-//        typeMap.addMappings(mapper -> {
-//            mapper.map(src -> src.getToWarehouseCode(),
-//                    Inventory::setWarehouseCode);
-//        });
         PropertyMap<TransferFormDto, Inventory> inventoryMap = new PropertyMap <TransferFormDto, Inventory>() {
             protected void configure() {
                 map().setWarehouseCode(source.getToWarehouseCode());

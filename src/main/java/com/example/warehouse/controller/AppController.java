@@ -9,8 +9,6 @@ import com.example.warehouse.service.ProductService;
 import com.example.warehouse.service.WarehouseService;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-import com.opencsv.bean.HeaderColumnNameMappingStrategy;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,10 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.swing.text.html.parser.Entity;
 import java.io.*;
-import java.math.BigDecimal;
-import java.nio.Buffer;
 import java.util.List;
 
 @Controller
@@ -68,6 +63,8 @@ public class AppController {
             try {
                 List<Product> productList = parseCSVWithHeader(Product.class, file);
                 for (Product product : productList) {
+                    if (product.getProductName().trim().isEmpty()) throw new Exception();
+                    if (product.getProductCode().trim().isEmpty()) throw new Exception();
                     if (product.getWeight().intValue() < 0) throw new Exception();
                 }
                 productService.saveAll(productList);

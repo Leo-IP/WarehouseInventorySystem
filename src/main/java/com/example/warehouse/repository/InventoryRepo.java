@@ -11,8 +11,11 @@ import java.util.List;
 public interface InventoryRepo extends JpaRepository<Inventory, Long> {
 
     List<Inventory> findByProductCode(String productCode);
-    List<Inventory> findAllByProductCodeAndAndWarehouseCode(String productCode, String warehouseCode);
+
     Inventory findByProductCodeAndAndWarehouseCode(String productCode, String warehouseCode);
-    List<Inventory> findByProductCodeAndWarehouseCodeNot(String productCode, String warehouseCode);
+
     boolean existsByProductCodeAndWarehouseCode(String productCode, String warehouseCode);
+
+//    List<Inventory> findByProductCodeAndWarehouseCodeNot(String productCode, String warehouseCode);
+//    List<Inventory> findAllByProductCodeAndAndWarehouseCode(String productCode, String warehouseCode);
 }
